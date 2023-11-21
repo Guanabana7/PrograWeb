@@ -1,0 +1,703 @@
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #0474dc ;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        
+    }
+    .btn-logo {
+        background-image: url('Imagenes/WalmartLogoBlanco.png');
+        background-size: 150px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 150px;
+        height: 40px;
+        padding: 10px;
+        margin-left: 10px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        border-radius: 30px;
+    }
+
+    .btn-logo:hover {
+        background-color:  #044c9c ;
+    }
+    .btn-superior {
+        background-color: transparent;
+        border: none;
+        padding: 10px;
+        color: white;
+        cursor: pointer;
+        margin: 10px;
+        transition: background-color 0.2s ease;
+        font-family: 'Bhima', sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 30px;
+    }
+    .btn-superior:hover {
+        background-color:  #044c9c ;
+    }
+    .barra-busqueda {
+        flex-grow: 1;
+        margin: 0 0px;
+        border: 0px solid white;
+        padding: 10px;
+        background-color: white;
+        color: white;
+        border-top-left-radius: 30px;
+        border-end-start-radius: 30px;
+    }
+
+    .btn-buscar {
+        background-color: #ffc320;
+        color: rgb(0, 0, 0);
+        border: none;
+        padding: 10px 10px;
+        cursor: pointer;
+        font-family: 'Bhima', sans-serif;
+        font-weight: bold;
+        border-top-right-radius: 30px;
+        border-end-end-radius: 30px;
+    }
+    .container {
+        margin: 0 auto;
+        width: 1300px;
+        background-color: #fff;
+    }
+    .container-1{
+        position: relative;
+    }
+    .main-panel {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+    }
+    .external-links {
+        background-color: #0474dc ;
+        padding: 25px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+    }
+    .external-link {
+        margin: 10px;
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+    .main-panel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .btn-grande {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        margin: 10px;
+        cursor: pointer;
+        width: 600px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .img-Express, .img-Online {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 600px;
+        height: 400px;
+        cursor: pointer;
+        border-radius: 30px;
+        margin: 0 auto;
+    }
+    .btn-comienza {
+        background-color: #ffffff;
+        border: 2px solid #000;
+        padding: 10px;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        margin-top: auto;
+        width: 30%;
+        transition: background-color 0.2s ease;
+        font-family: 'Bhima', sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 25px;
+        text-align: center;
+    }
+
+    .btn-comienza:hover {
+        background-color: #000000;
+        border: 2px solid #ffffff;
+        color: #ffffff;
+    }
+
+    .label1 {
+        font-family: 'Bhima', sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .label2 {
+        font-family: 'Bhima', sans-serif;
+        font-size: 14px;
+        color: #2c2c2c;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    .img-Express {
+        background-image: url('Imagenes/Express.png');
+    }
+
+    .img-Online {
+        background-image: url('Imagenes/Online.png');
+    }
+
+    .carousel-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .carousel-slide {
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+    }
+
+    .carousel-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #prevBtn, #nextBtn {
+        font-family: 'Bhima', sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        background-color: #0474dc;
+        color: white;
+        border-radius: 5px;
+        outline: none;
+    }
+
+    #prevBtn:hover, #nextBtn:hover {
+        background-color: #044c9c;
+    }
+    .modal-background {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+    .modal {
+        display: none;
+        position: absolute;
+        background-color: #f4f4f4;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        z-index: 2;
+    }
+    .buttonCuenta {
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        cursor: pointer;
+        font-family: 'Bhima', sans-serif;
+        font-weight: bold;
+        background-color: #0474dc;
+        border-radius: 10px;
+        color: #ffffff;
+        transition: background-color 0.2s, margin 0.2s;
+        height: 40px;
+        width: 120px;
+    }
+
+    .buttonCuenta:hover {
+        background-color: #044c9c;
+    }
+
+    .center-modal {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    .modal-content buttonCuenta {
+        margin: 5px 0;
+    }
+    .btn-producto {
+        flex: 0 0 auto;
+        margin-right: 10px;
+        width: 200px;
+        height: 270px;
+        border: 1px solid #ddd;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: first baseline;
+        text-align: right;
+    }
+    
+    .btn-agregar {
+        background-color: #0474dc;
+        border: none;
+        padding: 10px 20px;
+        color: white;
+        cursor: pointer;
+        margin-top: auto;
+        margin-bottom: 10px;
+        width: 100%;
+        transition: background-color 0.2s ease;
+        font-family: 'Bhima', sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 25px;
+    }
+    
+    .btn-agregar:hover {
+        background-color: #044c9c;
+    }
+    
+    .producto-imagen {
+        align-self: center;
+        max-width: 150px;
+        height: 150px;
+        margin-bottom: 10px;
+    }
+    .imagen-alternativa {
+        align-self: center;
+        max-width: 150px;
+        height: 150px;
+        margin-bottom: 10px;
+    }
+    
+    .producto-precio {
+        font-weight: bold;
+        font-family: 'Bhima', sans-serif;
+        font-size: 20px;
+        margin-bottom: 10px;
+        text-align: right;
+    }
+    
+    .producto-titulo {
+        font-weight: bold;
+        font-family: 'Bhima', sans-serif;
+        font-size: 15px;
+        text-align: right;
+    }
+    .producto-categoria {
+        font-weight: bold;
+        font-family: 'Bhima', sans-serif;
+        font-size: 20px;
+        text-align: right;
+    }
+    .producto-marca{
+        font-family: 'Bhima', sans-serif;
+        font-size: 20px;
+        text-align: left;
+        width: 200px;
+        margin-top: 5px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .producto-descripcion {
+        font-family: 'Bhima', sans-serif;
+        font-size: 13px;
+        text-align: right;
+        width: 200px;
+        margin-top: 5px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .main-panel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 75vh;
+    }
+    
+    .login-panel {
+        border: 1px solid #ccc;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        width: 500px;
+    }
+    
+    .login-panel h2 {
+        margin-bottom: 20px;
+        font-family: 'Bhima', sans-serif;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    
+    .login-panel label {
+        display: contents;
+        margin-bottom: 10px;
+        font-family: 'Bhima', sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    
+    .login-panel input {
+        width: 90%;
+        height: 30px;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-family: 'Bhima', sans-serif;
+        font-size: 16px;
+    }
+    
+    .login-panel button {
+        width: 95%;
+        background-color: #0474dc;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: 'Bhima', sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.2s ease;
+    }
+    
+    .login-panel button:hover {
+        background-color: #044c9c;
+    }
+    .login-panel {
+        border: 1px solid #ccc;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        width: 500px;
+    }
+    
+    .login-panel h2 {
+        margin-bottom: 20px;
+        font-family: 'Bhima', sans-serif;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    
+    .login-panel label {
+        display: contents;
+        margin-bottom: 10px;
+        font-family: 'Bhima', sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    
+    .login-panel input {
+        width: 90%;
+        height: 30px;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-family: 'Bhima', sans-serif;
+        font-size: 16px;
+    }
+    
+    .login-panel button {
+        width: 95%;
+        background-color: #0474dc;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: 'Bhima', sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.2s ease;
+    }
+    
+    .login-panel button:hover {
+        background-color: #044c9c;
+    }
+    #panel-productos-Ex {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 25px;
+    }
+    #panel-productos-Ex2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-x: auto;
+        white-space: nowrap;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 25px;
+    }
+    .menu-container {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .btn-menu {
+        background-color: transparent;
+        border: none;
+        padding: 10px;
+        color: white;
+        cursor: pointer;
+        margin: 10px;
+        transition: background-color 0.2s ease;
+        font-family: 'Bhima', sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 30px;
+    }
+    .btn-menu:hover {
+        background-color:  #044c9c ;
+    }
+    
+    .menu {
+        position: absolute;
+        display: none;
+        background-color: white;
+        border: 1px solid #ddd;
+        padding: 0px;
+        margin-top: 21px;
+        width: 200px;
+        text-align: left;
+        z-index: 1000;
+    }
+    
+    .menu li {
+        padding: 5px;
+    }
+    
+    .menu a {
+        text-decoration: none;
+        color: #333;
+        display: block;
+        font-size: 15px;
+        padding: 5px 10px;
+        width: 100%; /* Ocupar todo el ancho disponible */
+        box-sizing: border-box; /* Incluir el relleno en el ancho total */
+        transition: background-color 0.2s ease; /* Transición de color de fondo al pasar el cursor */
+    }
+    
+    .menu a:hover {
+        background-color: #e4f4fc;
+    }
+    
+    .panel-carrito {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .panel-generalcarrito {
+        display: flex;
+        padding: 5px;
+        margin: 5px;
+        margin-bottom: 10PX;
+        background-color: transparent;
+        width: 50%;
+        border: 1px solid #333;
+        border-radius: 15px;    
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .panel-producto-carrito {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start ;
+        align-items: flex-start;
+        margin-right: 20px;
+    }
+    .imgp-carrito {
+        width: 150px;
+        height: 150px;
+        border-radius: 15px;
+    }
+    .nombrep-carrito {
+        font-family: 'Bhima', sans-serif;
+        font-size: 20px;
+    }
+
+    /* Estilos para la descripción del producto en el carrito */
+    .descp-carrito {
+        font-family: 'Bhima', sans-serif;
+        font-size: 14px;
+    }
+
+    /* Estilos para el precio del producto en el carrito */
+    .preciop-carrito {
+        margin-top: 10px;
+        font-family: 'Bhima', sans-serif;
+        font-size: 30px;
+        /* Añade otros estilos de texto según tus preferencias */
+    }
+    .panel-cantidad{
+        display: flex;
+        flex-direction: column; 
+        margin-right:50px;
+        margin-left: auto;
+    }
+    .eliminar{
+        margin-top: 10px;
+        margin-right: 50px;
+        font-family: 'Bhima', sans-serif;
+        font-size: 15px;
+        text-decoration: underline;
+        transform: skewX(-15deg);
+        border: none;
+        background: none; 
+        cursor: pointer;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+    .eliminar:hover{
+        text-decoration: none;
+        color: #044c9c;
+    }
+    .panel-sumar-restar {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        border: 1px solid #333;
+    }
+    
+    .boton-restar,
+    .boton-sumar {
+        background-color: #fff;
+        color: #333;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%; 
+        border: none;
+        font-size: 15px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+    
+    .boton-restar:hover,
+    .boton-sumar:hover {
+        background-color: #6d6d6d;
+        color: #fff;
+    }
+    
+    .label {
+        font-size: 18px;
+        margin: 0 10px;
+        font-weight: bold;
+    }
+    .pedir-section {
+        display: inline-block;
+        width: 50%;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        text-align: left;
+        margin: 20px;
+    }
+    
+    .pedir-title {
+        font-size: 24px;
+        font-family: 'Bhima', sans-serif;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    
+    /* Estilos para los elementos del resumen de pedido */
+    .resumen-carrito {
+        /* Puedes agregar estilos específicos para los productos aquí */
+        margin-bottom: 20px;
+    }
+    
+    /* Estilos para la cantidad y el precio total */
+    .cantidad-label,
+    .precio-total-label {
+        font-family: 'Bhima', sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+        margin-right: 10px;
+    }
+    
+    /* Estilos para el botón de pedir */
+    .btn-pedir {
+        background-color: #0474dc;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.2s ease;
+    }
+    
+    .btn-pedir:hover {
+        background-color: #044c9c;
+    }
+
+
+    /*panel-generalcarrito
+        panel-producto-carrito
+            imgp-carrito
+        panel-producto-carrito
+            nombrep-carrito
+            preciop-carrito
+        panel-producto-carrito
+            preciop-carrito*/

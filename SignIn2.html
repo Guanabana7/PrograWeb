@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walmart Datos Envio</title>
+    <link rel="icon" href="Imagenes/IconWalmart.png" type="image/png">
+    <link rel="stylesheet" href="Walmart.css">
+</head>
+<body>
+    <header>
+    </header>
+    <div class="container-1">
+        <div class="main-panel">
+            <div class="login-panel">
+                <h2>Datos de Envio</h2>
+                <input type="text" id="Es" name="Es" placeholder="Estado" required>
+                <input type="text" id="Ciu" name="Ciu" placeholder="Cuidad" required>
+                <input type="text" id="Cal" name="Cal" placeholder="Calle y Colonia" required>
+                <input type="text" id="NumEx" name="NumEx" placeholder="Numero externo" required>
+                <input type="text" id="Postal" name="Postal" placeholder="Código Postal" required>
+                <button id="crearCuentaButton" type="submit">Crear Cuenta</button>
+            </div>            
+        </div>
+        <div class="external-links">
+            <a href="https://www.walmart.com.mx/ayuda/articulo/terminos-y-condiciones/a1ddb40a57834d2485c773a918ab66e5" class="external-link" target="_blank">Terminos y Condiciones</a>
+            <a href="https://www.walmart.com.mx/ayuda/channel/legales-promociones/5a48c47b454846e7aa3b11ce748bc514" class="external-link" target="_blank">Legales</a>
+            <a href="https://www.walmart.com.mx/ayuda" class="external-link" target="_blank">Centro de Ayuda</a>
+        </div>
+    </div>
+    <script src="Scripts/ValidarSignIn2.js"></script>
+    <script>
+        function redireccionarALogin() {
+            window.location.href = 'HomePage.html';
+        }
+    </script>
+</body>
+</html>

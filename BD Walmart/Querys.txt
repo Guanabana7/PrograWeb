@@ -1,0 +1,82 @@
+CREATE DATABASE IF NOT EXISTS walmart;
+
+USE walmart;
+
+CREATE TABLE IF NOT EXISTS Usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    correo TEXT,
+    contrasena TEXT,
+    nombre TEXT,
+    telefono TEXT,
+    apellidos TEXT
+);
+
+CREATE TABLE IF NOT EXISTS productos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre TEXT,
+    descripcion TEXT,
+    precio INT,
+    direccion TEXT
+);
+
+CREATE TABLE IF NOT EXISTS servicios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre TEXT,
+    descripcion TEXT,
+    precio INT,
+    direccion TEXT
+);
+
+CREATE TABLE IF NOT EXISTS carrito (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_item INT,
+    cantidad INT DEFAULT 1
+);
+
+INSERT INTO productos (nombre, descripcion, precio, direccion) VALUES
+('PlayStation 5', 'Consola de última generación de Sony', 10000, 'PlayStation5.jpg'),
+('Xbox Series S', 'Consola de videojuegos compacta de Microsoft', 8000, 'XboxSeriesS.jpg'),
+('Nintendo Switch', 'Consola de videojuegos híbrida de Nintendo', 7000, 'NintendoSwitch.jpg'),
+('iPhone 14 Pro', 'Teléfono inteligente Apple de última generación', 25000, 'iPhone14Pro.jpg'),
+('Dell XPS 13', 'Portátil Dell con pantalla InfinityEdge y procesador Intel Core i7', 20000, 'DellXPS13.jpg'),
+('Nikon D850', 'Cámara réflex digital Nikon con sensor de alta resolución', 40000, 'NikonD850.jpg');
+
+INSERT INTO productos (nombre, descripcion, precio, direccion) VALUES
+('Cepillo de Dientes Eléctrico Oral-B', 'Cepillo de dientes eléctrico para una limpieza efectiva', 120, 'CepilloDientesElectric.jpg'),
+('Aspiradora Robótica iRobot Roomba', 'Aspiradora robótica inteligente para la limpieza del hogar', 800, 'iRobotRoomba.jpg'),
+('Jabón Líquido Neutrogena', 'Jabón líquido para manos Neutrogena con fórmula suave', 50, 'JabonNeutrogena.jpg'),
+('Cuchillas de Afeitar Gillette Fusion', 'Cuchillas de afeitar de precisión para un afeitado suave', 120, 'CuchillasAfeitarGillette.jpg'),
+('Secador de Pelo Remington', 'Secador de pelo con tecnología de secado rápido', 70, 'SecadorPeloRemington.jpg'),
+('Cepillo para el Cabello Tangle Teezer', 'Cepillo desenredante para cabello sin tirones', 30, 'CepilloCabelloTangleTeezer.jpg');
+
+INSERT INTO productos (nombre, descripcion, precio, direccion) VALUES
+('Cereal Kelloggs Corn Flakes', 'Cereal de maíz de Kelloggs', 50, 'CerealCornFlakes.jpg'),
+('Avena Quaker Instantánea', 'Avena instantánea Quaker para un desayuno saludable', 40, 'AvenaQuaker.jpg'),
+('Galletas Oreo', 'Galletas rellenas de crema de vainilla Oreo', 30, 'GalletasOreo.jpg'),
+('Arroz Integral Uncle Bens', 'Arroz integral de grano largo Uncle Bens', 60, 'ArrozIntegralUncleBens.jpg'),
+('Sopa Campbells de Tomate', 'Sopa de tomate en lata de Campbells', 25, 'SopaCampbellsTomate.jpeg'),
+('Cereal Cheerios', 'Cereal multigrano Cheerios para un desayuno nutritivo', 45, 'CerealCheerios.jpg');
+
+INSERT INTO productos (nombre, descripcion, precio, direccion) VALUES
+('Set de Platos y Vasos de Vidrio', 'Set de vajilla de vidrio para servir comidas', 180, 'PlatosVasosVidrio.jpg'),
+('Mesa de Centro de Madera', 'Mesa de centro elegante de madera', 400, 'MesaCentroMadera.jpg'),
+('Botella Térmica Contigo', 'Botella térmica para mantener las bebidas frías o calientes', 120, 'BotellaTermicaContigo.jpg'),
+('Silla de Escritorio Ergonómica', 'Silla ajustable y ergonómica para escritorio', 350, 'SillaEscritorio.jpg'),
+('Kit de Maquillaje Profesional', 'Set de maquillaje con productos de calidad profesional', 350, 'KitMaquillajeProfesional.jpg'),
+('Licuadora Oster con Vaso de Vidrio', 'Licuadora con motor potente y vaso de vidrio resistente', 250, 'LicuadoraOster.jpg');
+
+INSERT INTO productos (nombre, descripcion, precio, direccion) VALUES
+('Aceite de Oliva Extra Virgen', 'Aceite de oliva extra virgen de alta calidad', 80, 'AceiteOlivaExtraVirgen.jpg'),
+('Miel Orgánica de Abeja', 'Miel orgánica producida por abejas, sin aditivos', 100, 'MielOrganicaAbeja.jpg'),
+('Salsa de Tomate Heinz', 'Salsa de tomate Heinz para pasta y pizzas', 50, 'SalsaTomateHeinz.jpg'),
+('Pasta de Trigo Integral', 'Pasta de trigo integral para una opción más saludable', 40, 'PastaTrigoIntegral.jpg'),
+('Leche Orgánica de Almendras', 'Leche de almendras orgánica, sin lactosa', 60, 'LecheAlmendrasOrganica.jpg'),
+('Chocolate Amargo Lindt', 'Tableta de chocolate amargo Lindt, 70% cacao', 70, 'ChocolateAmargoLindt.jpeg');
+
+INSERT INTO servicios (nombre, descripcion, precio, direccion) VALUES
+('Bait Telefonia', 'Llamadas nacionales, EE.UU. y Canadá, mensajes y navegación en redes sociales desde $50', 200, 'Bait.png'),
+('Cashi', 'Pagos seguros, de manera inteligente', 100, 'Cashi.jpg'),
+('Suma Beneficios', 'Registra tu número, acumula tus compras y activa beneficios.', 0, 'Beneficios.png'),
+('Creditos Walmart', 'Solicita tu crédito en minutos y compra artículos en tienda y en línea.', 0, 'Creditos.png'),
+('Tu dinero seguro y cerca de ti', 'Recibe dinero en tienda desde servicio al cliente o en caja.', 0, 'Dinero.png'),
+('Membresia de Salud', 'Consultas médicas ilimitadas desde $30 al mes.', 0, 'Membresia.png');

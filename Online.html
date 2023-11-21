@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walmart</title>
+    <link rel="icon" href="Imagenes/IconWalmart.png" type="image/png">
+    <link rel="stylesheet" href="Walmart.css">
+    <link productos="WalmartProductos/productos.json">
+</head>
+<body>
+    <header>
+        <div class="btn-logo" onclick="redireccionarAHomePage()"></div>
+
+        <div class="menu-container">
+            <button class="btn-menu" onclick="toggleDepartamentos()">Departamentos</button>
+            <ul class="menu" id="departamentosMenu">
+                <li><a href="Express.html">Electrónica</a></li>
+                <li><a href="Express.html">Ropa</a></li>
+                <li><a href="Express.html">Alimentos</a></li>
+            </ul>
+        </div>
+        <button class="btn-superior" onclick="redireccionarAServicios()">Servicios</button>
+
+        <input type="text" class="barra-busqueda" style="width: 50px;" placeholder="Buscar en Walmart">
+        <button class="btn-buscar">Buscar</button>
+
+        <button class="btn-superior" onclick="abrirModal()">Cuenta</button>
+        <button class="btn-superior"onclick="redireccionarACarrito()">Carrito</button>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="cerrarModal()">&times;</span>
+                <button class="buttonCuenta" onclick="registrar()">Registrarse</button>
+                <button class="buttonCuenta" onclick="crearCuenta()">Crear Cuenta</button>
+            </div>
+        </div>
+        <div id="modalBackground" class="modal-background" onclick="cerrarModal()"></div>
+
+    </header>
+    <script src="Scripts/ObtenerProductos.js"></script>
+    <div class="container" id="contenedor-productos">
+        <!-- Productos-->
+    </div>
+        <div class="external-links">
+            <a href="https://www.walmart.com.mx/ayuda/articulo/terminos-y-condiciones/a1ddb40a57834d2485c773a918ab66e5" class="external-link" target="_blank">Terminos y Condiciones</a>
+            <a href="https://www.walmart.com.mx/ayuda/channel/legales-promociones/5a48c47b454846e7aa3b11ce748bc514" class="external-link" target="_blank">Legales</a>
+            <a href="https://www.walmart.com.mx/ayuda" class="external-link" target="_blank">Centro de Ayuda</a>
+        </div>
+    <script>
+        function toggleDepartamentos() {
+            var menu = document.getElementById("departamentosMenu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+    </script>
+    <script>
+        console.log('Iniciando la carga del archivo JSON...');
+    
+        var url = 'productos.json';
+    
+        fetch(url)
+            .then(response => {
+                if (response.ok) {
+                    console.log('Archivo JSON cargado con éxito.');
+                    return response.json();
+                } else {
+                    throw new Error('Error al cargar el archivo JSON');
+                }
+            })
+            .then(data => {
+                console.log('Datos JSON procesados con éxito.');
+    
+                const productosContainer = document.getElementById('productos-container');
+    
+                data.forEach(producto => {
+                    console.log('Procesando producto:', producto.nombre);
+    
+                    const productoContainer = document.createElement('div');
+                    productoContainer.classList.add('btn-producto');
+    
+                    const imagen = document.createElement('img');
+                    imagen.src = producto.imagen;
+                    imagen.alt = producto.nombre;
+                    imagen.classList.add('producto-imagen');
+                    productoContainer.appendChild(imagen);
+    
+                    const titulo = document.createElement('div');
+                    titulo.textContent = producto.nombre;
+                    titulo.classList.add('producto-titulo');
+                    productoContainer.appendChild(titulo);
+    
+                    const precio = document.createElement('div');
+                    precio.textContent = producto.precio;
+                    precio.classList.add('producto-precio');
+                    productoContainer.appendChild(precio);
+    
+                    const descripcion = document.createElement('div');
+                    descripcion.textContent = producto.descripcion;
+                    descripcion.classList.add('producto-descripcion');
+                    productoContainer.appendChild(descripcion);
+    
+                    const botonAgregar = document.createElement('button');
+                    botonAgregar.textContent = 'Agregar al Carrito';
+                    botonAgregar.classList.add('btn-agregar');
+                    productoContainer.appendChild(botonAgregar);
+    
+                    productosContainer.appendChild(productoContainer);
+                });
+    
+                console.log('Proceso completado.');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    </script>
+    <script>
+        function abrirModal() {
+            var modal = document.getElementById('myModal');
+            var modalBackground = document.getElementById('modalBackground');
+            modal.style.display = 'block';
+            modal.classList.add('center-modal');
+            modalBackground.style.display = 'block';
+        }
+        function cerrarModal() {
+            var modal = document.getElementById('myModal');
+            var modalBackground = document.getElementById('modalBackground');
+            modal.style.display = 'none';
+            modalBackground.style.display = 'none';
+        }
+        function registrar() {
+            window.location.href = 'Login.html';
+        }
+
+        function crearCuenta() {
+            window.location.href = 'SignIn.html';
+        }
+    </script>
+    <script>
+        function redireccionarALogin() {
+            window.location.href = 'Login.html';
+        }
+        function redireccionarAHomePage() {
+            window.location.href = 'HomePage.html';
+        }
+        function redireccionarAExpress() {
+            window.location.href = 'Express.html';
+        }
+        function redireccionarAOnline() {
+            window.location.href = 'Online.html';
+        }
+        function redireccionarACarrito() {
+            window.location.href = 'Cart.html';
+        }
+        function redireccionarAServicios() {
+            window.location.href = 'Servicios.html';
+        }
+    </script>
+</body>
+</html>

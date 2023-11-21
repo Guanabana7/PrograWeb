@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walmart</title>
+    <link rel="icon" href="Imagenes/IconWalmart.png" type="image/png">
+    <link rel="stylesheet" href="Walmart.css">
+</head>
+<body>
+    <header>
+        <div class="btn-logo" onclick="redireccionarAHomePage()"></div>
+
+        <div class="menu-container">
+            <button class="btn-menu" onclick="toggleDepartamentos()">Departamentos</button>
+            <ul class="menu" id="departamentosMenu">
+                <li><a href="Express.html">Electrónica</a></li>
+                <li><a href="Express.html">Ropa</a></li>
+                <li><a href="Express.html">Alimentos</a></li>
+            </ul>
+        </div>
+        <button class="btn-superior"onclick="redireccionarAServicios()">Servicios</button>
+
+        <input type="text" class="barra-busqueda" style="width: 50px;" placeholder="Buscar en Walmart">
+        <button class="btn-buscar">Buscar</button>
+
+        <button class="btn-superior" onclick="abrirModal()">Cuenta</button>
+        <button class="btn-superior" onclick="redireccionarACarrito()">Carrito</button>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="cerrarModal()">&times;</span>
+                <button class="buttonCuenta" onclick="registrar()">Ingresar</button>
+                <button class="buttonCuenta" onclick="crearCuenta()">Registrarse</button>
+            </div>
+        </div>
+        <div id="modalBackground" class="modal-background" onclick="cerrarModal()"></div>
+
+    </header>
+    <div class="container-1">
+        <div class="main-panel">
+            <div class="contenedor-Express" id="Express-container">
+                <div class="btn-grande">
+                    <div class="img-Express" onclick="redireccionarAExpress()"></div>
+                    <div class="label1">Entrega a partir de 60 minutos</div>
+                    <div class="label2">Todos los productos en tienda a precios bajos todos los días</div>
+                    <div class="btn-comienza" onclick="redireccionarAExpress()">Comienza a comprar</div>
+                </div>
+            </div>
+            <div class="contenedor-Online" id="Online-container">
+                <div class="btn-grande">
+                    <div class="img-Online" onclick="redireccionarAOnline()"></div>
+                    <div class="label1">Millones de productos desde 24 horas</div>
+                    <div class="label2">Envíos a todo México</div>
+                    <div class="btn-comienza" onclick="redireccionarAExpress()">Comienza a comprar</div>
+                </div>
+            </div>
+        </div>
+        <div class="main-panel">
+            <div class="carousel-container">
+                <button id="prevBtn">Anterior</button>
+                <div class="carousel-slide">
+                    <img src="Imagenes/Anuncio1.jpeg" alt="Anuncio">
+                    <img src="Imagenes/Anuncio2.jpeg" alt="Anuncio">
+                    <img src="Imagenes/Anuncio3.jpeg" alt="Anuncio">
+                    <img src="Imagenes/Anuncio4.jpeg" alt="Anuncio">
+                    <img src="Imagenes/Anuncio5.jpeg" alt="Anuncio">
+                </div>
+                <button id="nextBtn">Siguiente</button>
+            </div>
+            <script src="script.js"></script>
+        </div>
+        <div class="external-links">
+            <a href="https://www.walmart.com.mx/ayuda/articulo/terminos-y-condiciones/a1ddb40a57834d2485c773a918ab66e5" class="external-link" target="_blank">Terminos y Condiciones</a>
+            <a href="https://www.walmart.com.mx/ayuda/channel/legales-promociones/5a48c47b454846e7aa3b11ce748bc514" class="external-link" target="_blank">Legales</a>
+            <a href="https://www.walmart.com.mx/ayuda" class="external-link" target="_blank">Centro de Ayuda</a>
+        </div>
+    </div>
+    <script>
+        function toggleDepartamentos() {
+            var menu = document.getElementById("departamentosMenu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+    </script>
+    <script>
+        function abrirModal() {
+            var modal = document.getElementById('myModal');
+            var modalBackground = document.getElementById('modalBackground');
+            modal.style.display = 'block';
+            modal.classList.add('center-modal');
+            modalBackground.style.display = 'block';
+        }
+        function cerrarModal() {
+            var modal = document.getElementById('myModal');
+            var modalBackground = document.getElementById('modalBackground');
+            modal.style.display = 'none';
+            modalBackground.style.display = 'none';
+        }
+        function registrar() {
+            window.location.href = 'Login.html';
+        }
+
+        function crearCuenta() {
+            window.location.href = 'SignIn.html';
+        }
+    </script>
+    <script>
+        function redireccionarALogin() {
+            window.location.href = 'Login.html';
+        }
+        function redireccionarAHomePage() {
+            window.location.href = 'HomePage.html';
+        }
+        function redireccionarAExpress() {
+            window.location.href = 'Express.html';
+        }
+        function redireccionarAOnline() {
+            window.location.href = 'Online.html';
+        }
+        function redireccionarACarrito() {
+            window.location.href = 'Cart.html';
+        }
+        function redireccionarAServicios() {
+            window.location.href = 'Servicios.html';
+        }
+    </script>
+    <script>
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const carouselSlide = document.querySelector('.carousel-slide');
+        const images = document.querySelectorAll('.carousel-slide img');
+
+        let counter = 0;
+
+        nextBtn.addEventListener('click', () => {
+            if (counter < images.length - 1) {
+                counter++;
+                updateCarousel();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (counter > 0) {
+                counter--;
+                updateCarousel();
+            }
+        });
+
+        function updateCarousel() {
+            const imageWidth = images[0].clientWidth;
+            carouselSlide.style.transform = `translateX(${-imageWidth * counter}px)`;
+        }
+
+    </script>
+</body>
+</html>

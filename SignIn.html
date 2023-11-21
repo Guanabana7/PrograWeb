@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walmart Registro</title>
+    <link rel="icon" href="Imagenes/IconWalmart.png" type="image/png">
+    <link rel="stylesheet" href="Walmart.css">
+</head>
+<body>
+    <script src="Scripts/jquery-3.7.1.js"></script>
+    <header>
+        <div class="btn-logo" onclick="redireccionarALogin()"></div>
+    </header>
+    <div class="container-1">
+        <div class="main-panel">
+            <div class="login-panel">
+                <h2>Crear cuenta en Walmart</h2>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre(s)" required>
+                <input type="text" id="apellidos" name="apellidos" placeholder="Apellido(s)" required>
+                <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+                <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required>
+                <input type="password" id="contrasena" name="contrasena" placeholder="Crear contraseña" required>
+                <button id="crearCuentaButton" type="submit">Agregar Datos De Envio </button>
+            </div>            
+        </div>
+        <div class="external-links">
+            <a href="https://www.walmart.com.mx/ayuda/articulo/terminos-y-condiciones/a1ddb40a57834d2485c773a918ab66e5" class="external-link" target="_blank">Terminos y Condiciones</a>
+            <a href="https://www.walmart.com.mx/ayuda/channel/legales-promociones/5a48c47b454846e7aa3b11ce748bc514" class="external-link" target="_blank">Legales</a>
+            <a href="https://www.walmart.com.mx/ayuda" class="external-link" target="_blank">Centro de Ayuda</a>
+        </div>
+    </div>
+    <script src="Scripts/ValidarSignIn.js">
+        
+    </script>
+    <script>
+        function redireccionarALogin() {
+            window.location.href = 'HomePage.html';
+        }
+    </script>
+</body>
+</html>>
