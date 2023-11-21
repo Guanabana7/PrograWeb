@@ -8,7 +8,7 @@ class DBManager {
 
     public function __construct() {
         $this->db = "walmart";
-        $this->host = "192.168.100.14";
+        $this->host = "localhost";
         $this->user = "root";
         $this->pass = null;
         $this->port = 3306;

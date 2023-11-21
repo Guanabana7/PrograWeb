@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var contrasenaValor = contrasena.value;
 
         var xhr = new XMLHttpRequest();
-        var url = "http://localhost/WalmartPHP/VerificarUsuario.php";
+        var url = "http://192.168.100.14/WalmartPHP/VerificarUsuario.php";
     
         xhr.open("POST", url, true);
 

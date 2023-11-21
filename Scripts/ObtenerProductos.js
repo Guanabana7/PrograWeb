@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     var contenedorProductos = document.getElementById("contenedor-productos");
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost/WalmartPHP/obtenerProductos.php", true);
+    xhr.open("GET", "http://192.168.100.14/WalmartPHP/obtenerProductos.php", true);
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function agregarAlCarrito(idProducto) {
     console.log("Añadiendo al carrito");
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://localhost/WalmartPHP/AgregarAlCarrito.php", true);
+    xhr.open("POST", "http://192.168.100.14/WalmartPHP/AgregarAlCarrito.php", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     var datos = "idProducto=" + encodeURIComponent(idProducto);
     console.log(datos);
