@@ -1,4 +1,7 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
 error_log("Hola, este es un mensaje de depuración!");
 require 'DBManager.php';
 $nombre = $_POST["nombre"];
