@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var labelPrecio = document.getElementById("precio");
 
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://192.168.100.14/WalmartPHP/ObtenerPedido.php", true);
+    xhr.open("GET", "https://8630-2806-2f0-5040-fd02-4045-b8cf-77a4-b017.ngrok-free.app/WalmartPHP/ObtenerPedido.php", true);
 
     xhr.onreadystatechange = function () {
         console.log("Holaa");

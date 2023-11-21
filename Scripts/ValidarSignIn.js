@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var contrasenaValor = contrasena.value;
     
         var xhr = new XMLHttpRequest();
-        var url = "http://192.168.100.14/WalmartPHP/SignIn.php";
+        var url = "https://8630-2806-2f0-5040-fd02-4045-b8cf-77a4-b017.ngrok-free.app/WalmartPHP/SignIn.php";
     
         xhr.open("POST", url, true);
         

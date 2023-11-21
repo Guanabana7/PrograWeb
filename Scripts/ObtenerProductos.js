@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     var contenedorProductos = document.getElementById("contenedor-productos");
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://192.168.100.14/WalmartPHP/obtenerProductos.php", true);
+    xhr.open("GET", "https://8630-2806-2f0-5040-fd02-4045-b8cf-77a4-b017.ngrok-free.app/WalmartPHP/obtenerProductos.php", true);
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function agregarAlCarrito(idProducto) {
     console.log("Añadiendo al carrito");
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://192.168.100.14/WalmartPHP/AgregarAlCarrito.php", true);
+    xhr.open("POST", "https://8630-2806-2f0-5040-fd02-4045-b8cf-77a4-b017.ngrok-free.app/WalmartPHP/AgregarAlCarrito.php", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     var datos = "idProducto=" + encodeURIComponent(idProducto);
     console.log(datos);

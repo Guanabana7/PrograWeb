@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://192.168.100.14/WalmartPHP/ObtenerCarrito.php", true);
+    xhr.open("GET", "https://8630-2806-2f0-5040-fd02-4045-b8cf-77a4-b017.ngrok-free.app/WalmartPHP/ObtenerCarrito.php", true);
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
